@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="In Files">
+      <UniqueIdentifier>{d6a3020c-2a1d-44d1-bbdc-039eff590714}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Out Files">
+      <UniqueIdentifier>{a6b996b0-146d-4975-bd46-e800fce60956}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GPrc4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graphCol.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graphe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graphEC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="graphHC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wgraph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="graph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="graphe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wgraph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ciutats.in">
+      <Filter>In Files</Filter>
+    </None>
+    <None Include="Comarques.in">
+      <Filter>In Files</Filter>
+    </None>
+    <None Include="D.in">
+      <Filter>In Files</Filter>
+    </None>
+    <None Include="Euler2.in">
+      <Filter>In Files</Filter>
+    </None>
+    <None Include="Euler3.in">
+      <Filter>In Files</Filter>
+    </None>
+    <None Include="Euler4.in">
+      <Filter>In Files</Filter>
+    </None>
+    <None Include="g1000.in">
+      <Filter>In Files</Filter>
+    </None>
+    <None Include="graph0.in">
+      <Filter>In Files</Filter>
+    </None>
+    <None Include="graph1.in">
+      <Filter>In Files</Filter>
+    </None>
+    <None Include="graph2.in">
+      <Filter>In Files</Filter>
+    </None>
+    <None Include="graph3.in">
+      <Filter>In Files</Filter>
+    </None>
+    <None Include="wgraph0.in">
+      <Filter>In Files</Filter>
+    </None>
+    <None Include="wgraph1.in">
+      <Filter>In Files</Filter>
+    </None>
+    <None Include="wgraph2.in">
+      <Filter>In Files</Filter>
+    </None>
+    <None Include="wgraph3.in">
+      <Filter>In Files</Filter>
+    </None>
+    <None Include="ciutats.out">
+      <Filter>Out Files</Filter>
+    </None>
+    <None Include="Cn.out">
+      <Filter>Out Files</Filter>
+    </None>
+    <None Include="comarques.out">
+      <Filter>Out Files</Filter>
+    </None>
+    <None Include="D.out">
+      <Filter>Out Files</Filter>
+    </None>
+    <None Include="Euler1.out">
+      <Filter>Out Files</Filter>
+    </None>
+    <None Include="Euler2.out">
+      <Filter>Out Files</Filter>
+    </None>
+    <None Include="Euler3.out">
+      <Filter>Out Files</Filter>
+    </None>
+    <None Include="Euler4.out">
+      <Filter>Out Files</Filter>
+    </None>
+    <None Include="g1000.out">
+      <Filter>Out Files</Filter>
+    </None>
+    <None Include="H6x5.out">
+      <Filter>Out Files</Filter>
+    </None>
+    <None Include="Hn1n2-3x10,12.out">
+      <Filter>Out Files</Filter>
+    </None>
+    <None Include="Hn1n2-6x5.out">
+      <Filter>Out Files</Filter>
+    </None>
+    <None Include="Hn1n2.out">
+      <Filter>Out Files</Filter>
+    </None>
+    <None Include="Kn.out">
+      <Filter>Out Files</Filter>
+    </None>
+    <None Include="Kn1n2.out">
+      <Filter>Out Files</Filter>
+    </None>
+    <None Include="Kn1n2E.out">
+      <Filter>Out Files</Filter>
+    </None>
+    <None Include="provincies.out">
+      <Filter>Out Files</Filter>
+    </None>
+    <None Include="WCn.out">
+      <Filter>Out Files</Filter>
+    </None>
+    <None Include="WD.in">
+      <Filter>Out Files</Filter>
+    </None>
+    <None Include="WD.out">
+      <Filter>Out Files</Filter>
+    </None>
+    <None Include="WKn.out">
+      <Filter>Out Files</Filter>
+    </None>
+    <None Include="WKn1n2.out">
+      <Filter>Out Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Horse.txt">
+      <Filter>In Files</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
