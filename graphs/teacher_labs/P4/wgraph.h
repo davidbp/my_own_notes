@@ -26,3 +26,8 @@ void Dijkstra( wgraph &G, vertex sv, ofstream& fout );
 void DijkstraTree( wgraph &G, vertex sv, ofstream& fout );
 weight KruskalTrees( wgraph &G, ofstream& fout );
 weight PrimTrees( wgraph &G, ofstream& fout );
+
+// Added for P4 ex 16
+weight TravellingSalesmanProblem(wgraph &G, ofstream &fout);
+
+

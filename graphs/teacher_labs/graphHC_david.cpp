@@ -6,19 +6,20 @@
 #include "wgraph.h"
 #include <cmath>
 #include <ctime>
-//#include <conio.h>
+#include <conio.h>
 //
 //  Robert and Flores method for hamiltonian cycle
 //
-bool HamiltonianCycle( graph &G, ofstream& fout )
+ bool
+    HamiltonianCycle( graph &G, ofstream& fout )
 {
 	vertex vn = G.size();
 	vector<vertex> HCv( vn );
 	vector<bool> HCl( vn, false );
-	vector<size_t> ind( vn, 0 );
-    size_t HCi = 0;
+	vector<index> ind( vn, 0 );
+    index HCi = 0;
     vertex v = 0;
-    //  Initialize cycle from vertex 0
+//  Initialize cycle from vertex 0
 	HCv[HCi++] = v;
 	HCl[v] = true;	
 	//cout << "0";
@@ -36,11 +37,11 @@ bool HamiltonianCycle( graph &G, ofstream& fout )
 		}
 		if( HCi==vn ) {
 		//  Full vertices vector
- 			for( size_t i=0; i<G[v].size(); i++ ) {
+ 			for( index i=0; i<G[v].size(); i++ ) {
 				if( G[v][i]==0 ) {
 				//  Hamiltonian cycle completed with edge to 0
 					fout << "Hamiltonian cycle found: ";
-					for( size_t HCj=0; HCj<vn; HCj++ )
+					for( index HCj=0; HCj<vn; HCj++ )
 						fout  << HCv[HCj] << "-" ;
 					fout << "0" <<endl;
 				}
@@ -52,21 +53,22 @@ bool HamiltonianCycle( graph &G, ofstream& fout )
             return 0;  
 	//  Backtracking
     HCl[v] = false;
-	ind[v]= 0;
-	v = HCv[HCi-1];
+		ind[v]= 0;
+		v = HCv[HCi-1];
 	} while( 1 );
 }
 //
 //  Robert and Flores method for hamiltonian cycles
 //
-size_t HamiltonianCycles( graph &G, ofstream& fout )
+ index
+    HamiltonianCycles( graph &G, ofstream& fout )
 {
 	vertex vn = G.size();
     vector<vertex> HCv( vn );
 	vector<bool> HCl( vn, false );
-	vector<size_t> ind( vn, 0 );
+	vector<index> ind( vn, 0 );
     vertex v = 0;
-    size_t HCi = 0, HCn = 0;
+    index HCi = 0, HCn = 0;
 	HCv[HCi++] = v;
 	HCl[v] = true;	
 	//cout << "0";
@@ -81,10 +83,10 @@ size_t HamiltonianCycles( graph &G, ofstream& fout )
 		    else ind[v]++;
 		}
 		if( HCi==vn ) {
-			for( size_t i=0;i<G[v].size();i++ ){
+			for( index i=0;i<G[v].size();i++ ){
 				if( G[v][i]==0 ){
 					fout << "Hamiltonian cycle found: " ;
-					for( size_t HCj=0; HCj<vn; HCj++ ) 
+					for( index HCj=0; HCj<vn; HCj++ ) 
 						fout  << HCv[HCj] << "-" ;
 					fout << "0" <<endl;
 					HCn++;
@@ -105,16 +107,17 @@ size_t HamiltonianCycles( graph &G, ofstream& fout )
 }
 
 
-/*
-weight TravellingSalesmanProblem( wgraph &G, ofstream &fout )
+
+ weight
+    TravellingSalesmanProblem( wgraph &G, ofstream &fout )
 {
 	vertex vn = G.size();
-    size_t HCi = 0, HCn = 0;
+    index HCi = 0, HCn = 0;
     vector<vertex> HCv( vn );
 	vector<bool> HCl( vn, false );
-	vector<size_t> ind( vn, 0 );
-//  size_t of minimal Hamiltonian cycle found 	
-    size_t mHCn;
+	vector<index> ind( vn, 0 );
+//  Index of minimal Hamiltonian cycle found 	
+    index mHCn;
 //  Minimal Hamiltonian cycle weight (minimum)
  	weight mHCw = UINT_MAX;
 //  Minimal Hamiltonian cycle vertices
@@ -147,13 +150,13 @@ weight TravellingSalesmanProblem( wgraph &G, ofstream &fout )
 		}   
 		if( HCi==vn ) {
 		//  Vector full
-			for( size_t i=0;i<G[v].size(); i++ ){
+			for( index i=0;i<G[v].size(); i++ ){
 				if( G[v][i].first==0 ){
 					HCw += G[v][i].second; 
 				//  Cycle completed with edge to 0
                     HCn++;
 					fout << "Hamiltonian cycle " << HCn << " with weight [" << HCw << "]: ";
-					for( size_t HCj=0; HCj<vn; HCj++ )
+					for( index HCj=0; HCj<vn; HCj++ )
 						fout << HCv[HCj] << "-" ;
 					fout << "0" << endl; 
 				//  Test minimum weight
@@ -171,7 +174,7 @@ weight TravellingSalesmanProblem( wgraph &G, ofstream &fout )
 		if( HCi==0 ){
 			if( HCn ){
 				fout << "Hamiltonian cycle " << mHCn << " with minimum weight [" << mHCw << "]: ";
-				for( size_t HCj=0; HCj<vn; HCj++ )
+				for( index HCj=0; HCj<vn; HCj++ )
 					fout << mHCv[HCj] << "-" ;
 				fout << "0" << endl; 
 				return mHCw;
@@ -187,7 +190,6 @@ weight TravellingSalesmanProblem( wgraph &G, ofstream &fout )
 	} while( 1 );
   
 }
-*/
 
 
  

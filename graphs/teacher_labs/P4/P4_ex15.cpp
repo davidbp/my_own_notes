@@ -11,7 +11,6 @@ c++ -std=c++11 *.o -o a.out
 #include "wgraph.h"
 
 /*
-
 ### What needs to be done
 
 Exercici 15 Modifica el programa amb un altre modul graphHC.cpp que
@@ -23,7 +22,7 @@ contingui funcions
 que implementin el metode de backtracking de Robert i Flores per a la 
 cerca de cicles hamiltonians, un o tots. Aquestes funcions haurien de
 retornar el nombre de cicles hamiltonians trobats i escriure’ls com
-a successi ́o de v`ertexs a un stream de sortida.
+a successió de vèrtexs a un stream de sortida.
 
 
 ### Where to test the code
@@ -40,9 +39,8 @@ Continua el programa principal per tal que trobi el nombre de
 cicles hamiltonians en els grafs Ktn1,n2 del moviment del 
 cavall en taulers de diferents mides n1xn2 i els escrigui 
 en el fitxer Ktn1 n2.out.
-
-
 */
+
 int main()
 {
     std::cout << "\nExecuting P4_ex15.out\n " << endl;
@@ -52,11 +50,19 @@ int main()
     //  UNWEIGHTED GRAPHS
     // ##########################################################
 
+    /*
     //  Complete graph to adjacencies lists K6
     graph K6 = graph_complete(6);
     fout.open("./results/K6.out");
     graph_write(K6, fout);
     fout  << "\nHamiltonianCycle(K6):\n\n"  << HamiltonianCycle(K6,fout) << endl;
+    fout.close();
+	*/
+
+    wgraph WK6 = wgraph_complete(6, 9);
+	fout.open( "./results/WK6.out" );    
+	wgraph_write( WK6, fout );
+	fout  << "\nTSP(K6):\n\n" << TravellingSalesmanProblem(WK6, fout) << endl;
     fout.close();
 
 }
