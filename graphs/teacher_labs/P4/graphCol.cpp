@@ -7,82 +7,83 @@
 //
 //  Vertex-coloring of one vertex
 //
-color Vertex1Coloring(graph &G, vector<color> &Gc, color cn, vertex v, color oc)
+color Vertex1Coloring(graph &G, vector<color> &graph_coloring, color n_colors, vertex v, color initial_color)
 {
+    // color_used : vector of booleans
     vertex n = G.size();
-    vector<bool> avc( cn+1, false  );
-    for( size_t i=0; i<G[v].size(); i++ )  
+    vector<bool> color_used(n_colors + 1, false);
+    for( size_t i=0; i<G[v].size(); i++)  
         if ( G[v][i] < v )
-            avc[Gc[G[v][i]]] = true;
+            color_used[graph_coloring[G[v][i]]] = true;
     
-    //  First color from oc not in previous adjacent vertex
-    color c;
-    for( c=oc; c<=cn; c++ )
-        if ( !avc[c] ) {
-            Gc[v] = c;
+    //  First color from initial_color not in previous adjacent vertex
+    color color_ind;
+    for( color_ind=initial_color; color_ind<=n_colors; color_ind++ )
+        if ( !color_used[color_ind] ) {
+            graph_coloring[v] = color_ind;
             break;
         }
     //  Color vertex with new color
-    if ( c==cn+1 ) {
-        Gc[v] = ++cn;
+    if ( color_ind==n_colors+1 ) {
+        graph_coloring[v] = ++n_colors;
     }
-    return cn;
+    return n_colors;
 }
 
-color BrelazColoring(graph &G, vector<color> &Gc)
+color BrelazColoring(graph &G, vector<color> &graph_coloring)
 {
     color cn;
     vertex n = G.size();
     //  Color vertex 0 with color 1
-    Gc[0] = cn = 1;
+    graph_coloring[0] = cn = 1;
     //  Brélaz coloring: color other vertices with colors from 1
     for( vertex v=1; v<n; v++ )
-        cn = Vertex1Coloring( G, Gc, cn, v, 1 );
+        cn = Vertex1Coloring( G, graph_coloring, cn, v, 1 );
     return cn;
 }
 
 
-color VertexColoring(graph &G, vector<color> &Gc, ofstream &fout)
+color VertexColoring(graph &G, vector<color> &graph_coloring, ofstream &fout)
 {
     vertex vn = G.size();
     //  Prepare initial Brelaz coloring 
-    Gc = vector<color>(vn, 0);
+    graph_coloring = vector<color>(vn, 0);
     vector<color> Gpc(vn,0);
     color cn = BrelazColoring( G, Gpc );
     fout  << "\nVertex Coloring with " << cn << " colors\n";
 
     // print Vertex Coloring
      for(vertex v=0; v<vn; v++){
-        Gc[v] = Gpc[v];
-        fout << v << "\t" << Gc[v] << endl;
+        graph_coloring[v] = Gpc[v];
+        fout << v << "\t" << graph_coloring[v] << endl;
     }
 }
 
 //
 //  Vertex Coloring of Graph
 //
-color MinimalVertexColoring(graph &G, vector<color> &Gc, ofstream &fout)
+color MinimalVertexColoring(graph &G, vector<color> &graph_coloring, ofstream &fout)
 {
     vertex vn = G.size();
     //  Prepare initial Brelaz coloring 
-    Gc = vector<color>(vn, 0);
+    graph_coloring = vector<color>(vn, 0);
     vector<color> Gpc(vn,0);
     color cn = BrelazColoring( G, Gpc );
         
     do { 
-        //  Provisionally accept and write current coloring, saved in Gc
+        //  Provisionally accept and write current coloring, saved in graph_coloring
         //  Save it as proving coloring Gpc 
         //  Try successive reduction of color number cn
         //fout  << "Coloraci de vèrtexs amb " << cn << " colors\n";
         fout  << "\nColoring with " << cn << " colors\n";
         //cout  << "Coloration with " << cn << " colors\n";
         for( vertex v=0; v<vn; v++ ) {
-            Gc[v] = Gpc[v];
-            fout << v << "\t" << Gc[v] << endl;
+            graph_coloring[v] = Gpc[v];
+            fout << v << "\t" << graph_coloring[v] << endl;
         }
         for( vertex v=0; v<vn; v++ )
             for( size_t i=0; i<G[v].size(); i++ )
-                if( v<G[v][i] && Gc[v]==Gc[G[v][i]] )
+                if( v<G[v][i] && graph_coloring[v]==graph_coloring[G[v][i]] )
                     cout << "Coloring error : Same color " << v << "-" << G[v][i] ;
         
         //  Search first vertex cnv with current maximum color cn
@@ -99,7 +100,7 @@ color MinimalVertexColoring(graph &G, vector<color> &Gc, ofstream &fout)
                 cnv--;                                            
                    if ( cnv == 0 ) {
                  //  When backtracking reachs original vertex all possibilities exhausted:
-                //  last coloring Gc was ok
+                //  last coloring graph_coloring was ok
                     //fout  << "\nMinimal vertex coloring found\n";
                     return cn;
                 }
@@ -129,24 +130,24 @@ color MinimalVertexColoring(graph &G, vector<color> &Gc, ofstream &fout)
     MinimalEdgeColoring(   graph& G, edges& GE, ofstream& fout )
 {
     graph LG;
-    vector<color> LGc;
+    vector<color> Lgraph_coloring;
     edges LGE;
     line_graphe( G, GE, LG, LGE );
     graphe_write( LG, LGE, fout );
     fout << "Edge coloring\n";
     cout << "Edge coloring\n";
-    color ecn = MinimalVertexColoring( LG, LGc, fout );
+    color ecn = MinimalVertexColoring( LG, Lgraph_coloring, fout );
     vertex n=G.size();
     for( vertex v=0; v<n; v++ )
         for( size_t i=0; i<G[v].size(); i++ )
             if( v<G[v][i] )
-                fout << v << "\t" << G[v][i] << "\t"  << GE[vip(v,i)] <<  "\t"  << LGc[GE[vip(v,i)]] << endl;    
+                fout << v << "\t" << G[v][i] << "\t"  << GE[vip(v,i)] <<  "\t"  << Lgraph_coloring[GE[vip(v,i)]] << endl;    
     for( color c=1; c<=ecn; c++ ) {
         fout << "Color " << c << endl;
         for( vertex v=0; v<n; v++ )
             for( size_t i=0; i<G[v].size(); i++ )
-                if( v<G[v][i] && LGc[GE[vip(v,i)]]==c )
-                    fout << v << "\t" << G[v][i] << "\t"  << GE[vip(v,i)] <<  "\t"  << LGc[GE[vip(v,i)]] << endl;    
+                if( v<G[v][i] && Lgraph_coloring[GE[vip(v,i)]]==c )
+                    fout << v << "\t" << G[v][i] << "\t"  << GE[vip(v,i)] <<  "\t"  << Lgraph_coloring[GE[vip(v,i)]] << endl;    
     }
     return ecn;
  }
