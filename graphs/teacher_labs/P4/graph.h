@@ -8,6 +8,7 @@ using namespace std;
 typedef size_t vertex;
 typedef size_t edge;
 typedef size_t degree;
+typedef unsigned int color;      // for ex 19
 typedef unsigned int component;
 typedef unsigned int length;
 
@@ -34,6 +35,7 @@ void Dijkstra2(graph &G, size_t n1, size_t n2, size_t s1, size_t s2, ofstream& f
 
 // Added for P4 ex 15 
 bool HamiltonianCycle( graph &G, ofstream& fout );
+size_t HamiltonianCycles( graph &G, ofstream& fout );
 
 
 // For weighted graphs
@@ -53,3 +55,8 @@ void Dijkstra( wgraph &G, vertex sv, ofstream& fout );
 void DijkstraTree( wgraph &G, vertex sv, ofstream& fout );
 weight KruskalTrees( wgraph &G, ofstream& fout );
 weight PrimTrees( wgraph &G, ofstream& fout );
+
+// For ex 19
+color VertexColoring(graph &G, vector<color> &Gc, ofstream &fout);
+color MinimalVertexColoring(graph &G, vector<color> &Gc, ofstream &fout );
+
