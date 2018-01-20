@@ -13,19 +13,12 @@ color Vertex1Coloring(graph &G, vector<color> &graph_coloring, color n_colors, v
     vertex n = G.size();
     vector<bool> color_used(n_colors + 1, false);
     for( size_t i=0; i<G[v].size(); i++)  
-        if ( G[v][i] < v )
-            color_used[graph_coloring[G[v][i]]] = true;
-    
+         // assign color_used
+
     //  First color from initial_color not in previous adjacent vertex
     color color_ind;
-    for( color_ind=initial_color; color_ind<=n_colors; color_ind++ )
-        if ( !color_used[color_ind] ) {
-            graph_coloring[v] = color_ind;
-            break;
-        }
-    //  Color vertex with new color
-    if ( color_ind==n_colors+1 ) 
-        graph_coloring[v] = ++n_colors;
+    for( color_ind=initial_color; color_ind<=n_colors; color_ind++)
+        // assign graph_coloring[v]
     
     return n_colors;
 }
@@ -122,35 +115,3 @@ color MinimalVertexColoring(graph &G, vector<color> &graph_coloring, ofstream &f
     return 0;
 } 
 
-
-/*
- //
-//  Edge coloring by vertex coloring line graph
-//
- color
-    MinimalEdgeColoring(   graph& G, edges& GE, ofstream& fout )
-{
-    graph LG;
-    vector<color> Lgraph_coloring;
-    edges LGE;
-    line_graphe( G, GE, LG, LGE );
-    graphe_write( LG, LGE, fout );
-    fout << "Edge coloring\n";
-    cout << "Edge coloring\n";
-    color ecn = MinimalVertexColoring( LG, Lgraph_coloring, fout );
-    vertex n=G.size();
-    for( vertex v=0; v<n; v++ )
-        for( size_t i=0; i<G[v].size(); i++ )
-            if( v<G[v][i] )
-                fout << v << "\t" << G[v][i] << "\t"  << GE[vip(v,i)] <<  "\t"  << Lgraph_coloring[GE[vip(v,i)]] << endl;    
-    for( color c=1; c<=ecn; c++ ) {
-        fout << "Color " << c << endl;
-        for( vertex v=0; v<n; v++ )
-            for( size_t i=0; i<G[v].size(); i++ )
-                if( v<G[v][i] && Lgraph_coloring[GE[vip(v,i)]]==c )
-                    fout << v << "\t" << G[v][i] << "\t"  << GE[vip(v,i)] <<  "\t"  << Lgraph_coloring[GE[vip(v,i)]] << endl;    
-    }
-    return ecn;
- }
-
- */

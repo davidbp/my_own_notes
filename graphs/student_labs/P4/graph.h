@@ -8,9 +8,9 @@ using namespace std;
 typedef size_t vertex;
 typedef size_t edge;
 typedef size_t degree;
+typedef unsigned int color;      // for ex 19
 typedef unsigned int component;
 typedef unsigned int length;
-
 
 // For unweighted graphs
 typedef vector<vector<vertex> > graph;
@@ -21,7 +21,6 @@ graph graph_wheel(size_t n);
 graph graph_bipartite_complete( size_t n1, size_t n2 );
 graph graph_read( string fname );
 void graph_write( graph& G, ofstream& fout );
-void graph_write2( graph& G, size_t n1, size_t n2, ofstream& fout);
 graph graph_king( size_t n1, size_t n2 );
 graph graph_rook( size_t n1, size_t n2 );
 graph graph_knight( size_t n1, size_t n2 );
@@ -32,7 +31,6 @@ component BFS_Trees(graph &G, ofstream &fout);
 component DFS_Trees(graph &G, ofstream &fout);
 void Dijkstra( graph &G, vertex s, ofstream& fout );
 void Dijkstra2(graph &G, size_t n1, size_t n2, size_t s1, size_t s2, ofstream& fout);
-
 
 // For weighted graphs
 typedef unsigned int weight;
@@ -51,3 +49,12 @@ void Dijkstra( wgraph &G, vertex sv, ofstream& fout );
 void DijkstraTree( wgraph &G, vertex sv, ofstream& fout );
 weight KruskalTrees( wgraph &G, ofstream& fout );
 weight PrimTrees( wgraph &G, ofstream& fout );
+
+// Added for P4 ex 15 
+bool HamiltonianCycle( graph &G, ofstream& fout );
+size_t HamiltonianCycles( graph &G, ofstream& fout );
+
+// Added for P4 ex 19
+color VertexColoring(graph &G, vector<color> &Gc, ofstream &fout);
+color MinimalVertexColoring(graph &G, vector<color> &Gc, ofstream &fout );
+
