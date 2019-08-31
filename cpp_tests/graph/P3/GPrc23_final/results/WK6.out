@@ -1,0 +1,66 @@
+WGraph with 6 vertices and 15 edges 
+Weighted adjacency lists
+0: 1[5]  2[8]  3[6]  4[3]  5[5] 
+1: 0[5]  2[9]  3[7]  4[9]  5[9] 
+2: 0[8]  1[9]  3[2]  4[1]  5[9] 
+3: 0[6]  1[7]  2[2]  4[7]  5[9] 
+4: 0[3]  1[9]  2[1]  3[7]  5[1] 
+5: 0[5]  1[9]  2[9]  3[9]  4[1] 
+
+Weighted edges
+0-1[5] 
+0-2[8] 
+0-3[6] 
+0-4[3] 
+0-5[5] 
+1-2[9] 
+1-3[7] 
+1-4[9] 
+1-5[9] 
+2-3[2] 
+2-4[1] 
+2-5[9] 
+3-4[7] 
+3-5[9] 
+4-5[1] 
+Degrees sequence
+5 5 5 5 5 5 
+Sorted degrees sequence
+5 5 5 5 5 5 
+Distance from 0 to 5: 4
+Diameter 9
+
+Dijkstra tree
+0[0]
+1[5]	0
+2[4]	4
+3[6]	0
+4[3]	0
+5[4]	4
+Dijkstra paths
+0
+1 <- 0
+2 <- 4 <- 0
+3 <- 0
+4 <- 0
+5 <- 4 <- 0
+
+
+Kruskal tree weight: Kruskal edge: 2 - 4 (3) [1]
+Kruskal edge: 4 - 5 (4) [1]
+Kruskal edge: 2 - 3 (2) [2]
+Kruskal edge: 0 - 4 (3) [3]
+Kruskal edge: 0 - 1 (0) [5]
+Component 0 of weight 12, vertices: 	0	1	2	3	4	5
+Total weight :12
+12
+Prim tree weight: Prim edge: 2 - 4 (3) [1]
+Prim edge: 4 - 4 (4) [1]
+Prim edge: 2 - 4 (2) [2]
+Prim edge: 4 - 4 (0) [3]
+Prim edge: 0 - 4 (0) [5]
+Component 0 of weight 12, vertices: 	0	1	2	3	4	5
+12
+
+
+WK24

@@ -1,0 +1,57 @@
+Graph with 4 vertices and 7 edges 
+Adjacencies lists
+0	:	1	3
+1	:	0	2	2	2	3
+2	:	1	1	1	2
+3	:	0	1
+Edges
+0-1
+0-3
+1-2
+1-2
+1-2
+1-3
+2-2
+Degrees sequence
+2 5 4 2 
+Sorted degrees sequence
+2 2 4 5 
+
+Number of DFS components: 
+DFS tree(s)
+v	ind	[d]	p
+0	0
+1	1	[1]	0
+2	2	[2]	1
+3	3	[2]	1
+DFS edges
+Edge 0 - 1 in tree
+Edge 0 - 3 not in tree
+Edge 1 - 2 in tree
+Edge 1 - 2 in tree
+Edge 1 - 2 in tree
+Edge 1 - 3 in tree
+Edge 2 - 2 not in tree
+1
+
+Number of BFS components: 
+BFS tree(s)
+v	ind	[d]	p
+0	0
+1	1	[1]	0
+2	3	[2]	1
+3	2	[1]	0
+BFS edges
+Edge 0 - 1 in tree
+Edge 0 - 3 in tree
+Edge 1 - 2 in tree
+Edge 1 - 2 in tree
+Edge 1 - 2 in tree
+Edge 1 - 3 not in tree
+1
+
+Distances from starting vertex 0
+0	0
+1	1
+2	2
+3	1

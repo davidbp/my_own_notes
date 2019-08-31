@@ -1,0 +1,84 @@
+Graph with 7 vertices and 6 edges 
+Adjacencies lists
+0	:	6
+1	:	6
+2	:	6
+3	:	6
+4	:	6
+5	:	6
+6	:	0	1	2	3	4	5
+Edges
+0-6
+1-6
+2-6
+3-6
+4-6
+5-6
+Degrees sequence
+1 1 1 1 1 1 6 
+Sorted degrees sequence
+1 1 1 1 1 1 6 
+
+Number of DFS components: 
+DFS tree(s)
+v	ind	[d]	p
+0	0
+1	2	[2]	6
+2	3	[2]	6
+3	4	[2]	6
+4	5	[2]	6
+5	6	[2]	6
+6	1	[1]	0
+DFS edges
+Edge 0 - 6 in tree
+Edge 1 - 6 in tree
+Edge 2 - 6 in tree
+Edge 3 - 6 in tree
+Edge 4 - 6 in tree
+Edge 5 - 6 in tree
+1
+
+Number of BFS components: 
+BFS tree(s)
+v	ind	[d]	p
+0	0
+1	2	[2]	6
+2	3	[2]	6
+3	4	[2]	6
+4	5	[2]	6
+5	6	[2]	6
+6	1	[1]	0
+BFS edges
+Edge 0 - 6 in tree
+Edge 1 - 6 in tree
+Edge 2 - 6 in tree
+Edge 3 - 6 in tree
+Edge 4 - 6 in tree
+Edge 5 - 6 in tree
+1
+
+Distances from starting vertex 0
+0	0
+1	2
+2	2
+3	2
+4	2
+5	2
+6	1
+
+BFS tree(s)
+v	ind	[d]	p
+0	0
+1	2	[2]	6
+2	3	[2]	6
+3	4	[2]	6
+4	5	[2]	6
+5	6	[2]	6
+6	1	[1]	0
+BFS edges
+Edge 0 - 6 in tree
+Edge 1 - 6 in tree
+Edge 2 - 6 in tree
+Edge 3 - 6 in tree
+Edge 4 - 6 in tree
+Edge 5 - 6 in tree

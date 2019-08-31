@@ -1,0 +1,118 @@
+
+
+WK42
+WGraph with 6 vertices and 8 edges 
+Weighted adjacency lists
+0: 4[3]  5[8] 
+1: 4[8]  5[8] 
+2: 4[2]  5[7] 
+3: 4[2]  5[1] 
+4: 0[3]  1[8]  2[2]  3[2] 
+5: 0[8]  1[8]  2[7]  3[1] 
+
+Weighted edges
+0-4[3] 
+0-5[8] 
+1-4[8] 
+1-5[8] 
+2-4[2] 
+2-5[7] 
+3-4[2] 
+3-5[1] 
+Degrees sequence
+2 2 2 2 4 4 
+Sorted degrees sequence
+2 2 2 2 4 4 
+Distance from 0 to 5 in WK4_2: 6
+Diameter of WK42 11
+
+Dijkstra tree
+0[0]
+1[11]	4
+2[5]	4
+3[5]	4
+4[3]	0
+5[6]	3
+Dijkstra paths
+0
+1 <- 4 <- 0
+2 <- 4 <- 0
+3 <- 4 <- 0
+4 <- 0
+5 <- 3 <- 4 <- 0
+
+
+Kruskal tree weight: Kruskal edge: 3 - 5 (1) [1]
+Kruskal edge: 2 - 4 (0) [2]
+Kruskal edge: 3 - 4 (0) [2]
+Kruskal edge: 0 - 4 (0) [3]
+Kruskal edge: 1 - 4 (0) [8]
+Component 0 of weight 16, vertices: 	0	1	2	3	4	5
+Total weight :16
+16
+Prim tree weight: Prim edge: 3 - 5 (1) [1]
+Prim edge: 3 - 5 (0) [2]
+Prim edge: 4 - 5 (2) [2]
+Prim edge: 4 - 5 (0) [3]
+Prim edge: 4 - 5 (1) [8]
+Component 0 of weight 16, vertices: 	0	1	2	3	4	5
+16
+
+
+WK24
+WGraph with 6 vertices and 8 edges 
+Weighted adjacency lists
+0: 2[3]  3[5]  4[7]  5[7] 
+1: 2[1]  3[9]  4[8]  5[8] 
+2: 0[3]  1[1] 
+3: 0[5]  1[9] 
+4: 0[7]  1[8] 
+5: 0[7]  1[8] 
+
+Weighted edges
+0-2[3] 
+0-3[5] 
+0-4[7] 
+0-5[7] 
+1-2[1] 
+1-3[9] 
+1-4[8] 
+1-5[8] 
+Degrees sequence
+4 4 2 2 2 2 
+Sorted degrees sequence
+2 2 2 2 4 4 
+Distance from 0 to 5 in WK2_4: 7
+Diameter of WK24 14
+
+Dijkstra tree
+0[0]
+1[4]	2
+2[3]	0
+3[5]	0
+4[7]	0
+5[7]	0
+Dijkstra paths
+0
+1 <- 2 <- 0
+2 <- 0
+3 <- 0
+4 <- 0
+5 <- 0
+
+
+Kruskal tree weight: Kruskal edge: 1 - 2 (0) [1]
+Kruskal edge: 0 - 2 (0) [3]
+Kruskal edge: 0 - 3 (1) [5]
+Kruskal edge: 0 - 4 (2) [7]
+Kruskal edge: 0 - 5 (3) [7]
+Component 0 of weight 23, vertices: 	0	1	2	3	4	5
+Total weight :23
+23
+Prim tree weight: Prim edge: 1 - 2 (0) [1]
+Prim edge: 2 - 2 (0) [3]
+Prim edge: 0 - 2 (1) [5]
+Prim edge: 0 - 2 (2) [7]
+Prim edge: 0 - 2 (3) [7]
+Component 0 of weight 23, vertices: 	0	1	2	3	4	5
+23
