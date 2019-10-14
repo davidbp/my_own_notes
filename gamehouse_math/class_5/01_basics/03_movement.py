@@ -35,7 +35,7 @@ color_red = (255,0,0)
 
 ## Main loop of the game
 run = True
-wait_time = 10 #milliseconds
+wait_time = 400 #milliseconds
 
 while run:
     pygame.time.delay(wait_time)
@@ -43,6 +43,8 @@ while run:
         if event.type == pygame.QUIT:
             run=False
 
+    ### NEW: Function to generate a tuple containing the keys
+    ###      that are pressed in that time instance
     keys = pygame.key.get_pressed()
 
     if keys[pygame.K_LEFT]:
@@ -57,7 +59,8 @@ while run:
     if keys[pygame.K_DOWN]:
         y += velocity
     
-    window.fill((0,0,0))
+    ### NEW: window.fill allows us to paint (fill) the whole screen
+    window.fill((0,255,0))
     pygame.draw.rect(window, color_red, (x,y,width, height))
     pygame.display.update()
 

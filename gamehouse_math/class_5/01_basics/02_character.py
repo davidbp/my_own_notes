@@ -9,7 +9,7 @@ pygame.display.set_caption("String displayed in the window")
 
 ## character atributes
 x = 50
-y = 50
+y = 430
 width    = 40
 height   = 70
 velocity = 5
@@ -25,8 +25,8 @@ while run:
         if event.type == pygame.QUIT:
             run=False
 
+    ### NEW: Function to create rectangle objects
     pygame.draw.rect(window, color_red, (x,y,width, height))
+    ### NEW: Function to refresh the pixels on the window
     pygame.display.update()
-
-
 
