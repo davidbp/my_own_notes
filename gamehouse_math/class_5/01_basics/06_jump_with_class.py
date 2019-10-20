@@ -28,14 +28,19 @@ pygame.display.set_caption("String displayed in the window")
 #time.sleep(5)
 
 ## character atributes
-x = 50
-y = 400
-width    = 40
-height   = 70
-velocity = 5
-color_red = (255,0,0)
-isJump = False
-jumpCount = 15
+
+#class player():
+#
+#    def __init__():
+#        self.x = 50
+#        self.y = 400
+#        self.width    = 40
+#        self.height   = 70
+#        self.velocity = 5
+#        self.color_red = (255,0,0)
+#        self.isJump = False
+#        self.jumpCount = 15
+
 
 ## Main loop of the game
 run = True

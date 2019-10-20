@@ -11,17 +11,17 @@ Notice pygame takes (0,0) to be the top left position of a window
     |                |
     |                |
     |                |
-    |                |
+    |--------------- |   height of our character
     |                |
     BL ------------- BR
-
+        
 """
 import pygame
 import time
 
 pygame.init()
 WINDOW_X = 500
-WINDOW_Y = 500
+WINDOW_Y = 800
 
 window = pygame.display.set_mode((WINDOW_X,WINDOW_Y))
 pygame.display.set_caption("String displayed in the window")
